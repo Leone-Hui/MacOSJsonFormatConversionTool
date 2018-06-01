@@ -72,33 +72,39 @@
 }
 #pragma mark - NSArray 转 NSString
 -(NSString*)stringWithJsonArray:(NSArray*)jsonArray{
-    NSString* jsonString = @"[";
-    for (id objArray in jsonArray) {
-        NSString* valueString;
-        if ([objArray isKindOfClass:[NSDictionary class]]) {
-            valueString = [NSString stringWithFormat:@"%@,",[self stringWithJsonDic:objArray]];
-            jsonString = [jsonString stringByAppendingString:valueString];
-
-        }else if ([objArray isKindOfClass:[NSNumber class]]){//数字类型
-            valueString = [jsonArray componentsJoinedByString:@","];//,为分隔符
-            jsonString = [jsonString stringByAppendingString:valueString];
-            NSLog(@"jsonString = %@",jsonString);
-            return jsonString;
-        }else if ([objArray isKindOfClass:[NSString class]]){//字符串类型
-            valueString = [NSString stringWithFormat:@"\"%@\",",objArray];
-            jsonString = [jsonString stringByAppendingString:valueString];
-        }else{
-            jsonString = [jsonString stringByAppendingString:@"]"];
-            return jsonString;
-
+    
+    if (jsonArray != nil && ![jsonArray isKindOfClass:[NSNull class]] && jsonArray.count != 0){
+        NSString* jsonString = @"[";
+        for (id objArray in jsonArray) {
+            NSString* valueString;
+            if ([objArray isKindOfClass:[NSDictionary class]]) {
+                valueString = [NSString stringWithFormat:@"%@,",[self stringWithJsonDic:objArray]];
+                jsonString = [jsonString stringByAppendingString:valueString];
+                
+            }else if ([objArray isKindOfClass:[NSNumber class]]){//数字类型
+                valueString = [jsonArray componentsJoinedByString:@","];//,为分隔符
+                jsonString = [jsonString stringByAppendingString:valueString];
+                NSLog(@"jsonString = %@",jsonString);
+                return jsonString;
+            }else if ([objArray isKindOfClass:[NSString class]]){//字符串类型
+                valueString = [NSString stringWithFormat:@"\"%@\",",objArray];
+                jsonString = [jsonString stringByAppendingString:valueString];
+            }else{
+                jsonString = [jsonString stringByAppendingString:@"]"];
+                return jsonString;
+                
+            }
         }
+        //// 去掉最后一个","
+        jsonString = [jsonString substringToIndex:([jsonString length]-1)];
+        jsonString = [jsonString stringByAppendingString:@"]"];
+        return jsonString;
+        
+    }else{
+        NSString* jsonString = @"[]";
+        return jsonString;
     }
-    //// 去掉最后一个","
-    jsonString = [jsonString substringToIndex:([jsonString length]-1)];
-    jsonString = [jsonString stringByAppendingString:@"]"];
-    return jsonString;
 }
-
 
 #pragma mark - 写入本地txt并返回地址
 -(NSString*)writeFile:(NSString *)file withFileName:(NSString*)fileName andBool:(BOOL)isDelete{
