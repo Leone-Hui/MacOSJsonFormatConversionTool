@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "DHMacJsonFormatStringTool.h"
 
 @interface ViewController : NSViewController
 

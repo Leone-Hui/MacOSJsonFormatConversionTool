@@ -12,6 +12,7 @@
 		4013856F20C0FB0400C9495E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4013856E20C0FB0400C9495E /* Assets.xcassets */; };
 		4013857220C0FB0400C9495E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4013857020C0FB0400C9495E /* Main.storyboard */; };
 		4013857520C0FB0400C9495E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4013857420C0FB0400C9495E /* main.m */; };
+		40BFD9C020C2264900E1F287 /* DHMacJsonFormatStringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BFD9BF20C2264900E1F287 /* DHMacJsonFormatStringTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,8 @@
 		4013857320C0FB0400C9495E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4013857420C0FB0400C9495E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4013857620C0FB0400C9495E /* MacOSJsonFormatConversionTool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacOSJsonFormatConversionTool.entitlements; sourceTree = "<group>"; };
+		40BFD9BE20C2264900E1F287 /* DHMacJsonFormatStringTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHMacJsonFormatStringTool.h; sourceTree = "<group>"; };
+		40BFD9BF20C2264900E1F287 /* DHMacJsonFormatStringTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHMacJsonFormatStringTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 				4013856920C0FB0300C9495E /* AppDelegate.m */,
 				4013856B20C0FB0300C9495E /* ViewController.h */,
 				4013856C20C0FB0300C9495E /* ViewController.m */,
+				40BFD9BE20C2264900E1F287 /* DHMacJsonFormatStringTool.h */,
+				40BFD9BF20C2264900E1F287 /* DHMacJsonFormatStringTool.m */,
 				4013856E20C0FB0400C9495E /* Assets.xcassets */,
 				4013857020C0FB0400C9495E /* Main.storyboard */,
 				4013857320C0FB0400C9495E /* Info.plist */,
@@ -142,6 +147,7 @@
 				4013856D20C0FB0300C9495E /* ViewController.m in Sources */,
 				4013857520C0FB0400C9495E /* main.m in Sources */,
 				4013856A20C0FB0300C9495E /* AppDelegate.m in Sources */,
+				40BFD9C020C2264900E1F287 /* DHMacJsonFormatStringTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
